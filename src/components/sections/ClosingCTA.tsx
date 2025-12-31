@@ -18,9 +18,9 @@ export function ClosingCTA() {
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, y: 50, scale: 0.95 }}
+          animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+          transition={{ duration: 0.8, type: "spring", stiffness: 80 }}
           className="max-w-4xl mx-auto text-center"
         >
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">

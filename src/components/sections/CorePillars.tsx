@@ -34,9 +34,9 @@ export function CorePillars() {
     <section ref={ref} className="py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, type: "spring", stiffness: 80 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="font-body text-sm font-semibold text-accent uppercase tracking-wider mb-4 block">
@@ -51,8 +51,8 @@ export function CorePillars() {
           {pillars.map((pillar, index) => (
             <motion.div
               key={pillar.title}
-              initial={{ opacity: 0, y: 40 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              initial={{ opacity: 0, y: 60, scale: 0.9 }}
+              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
               transition={{ duration: 0.7, delay: index * 0.15 }}
               whileHover={{ y: -10, transition: { duration: 0.3 } }}
               className="group relative cursor-pointer"
