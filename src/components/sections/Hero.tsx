@@ -23,7 +23,7 @@ export function Hero() {
           >
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground leading-tight mb-6">
               We Help African Businesses{" "}
-              <span className="text-gradient-gold">Design, Build, and Scale</span>{" "}
+              <span className="text-gradient-red">Design, Build, and Scale</span>{" "}
               Digital-First Operations.
             </h1>
           </motion.div>

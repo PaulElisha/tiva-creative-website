@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Linkedin, Twitter, Instagram } from "lucide-react";
+import tivaLogoWhite from "@/assets/tiva-icon-white.png";
 
 const footerLinks = {
   company: [
@@ -16,26 +17,29 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer className="bg-foreground text-background">
       <div className="container mx-auto px-4 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center gap-2 mb-6">
-              <span className="font-display text-2xl font-bold">Tiva</span>
-              <span className="font-display text-2xl font-light opacity-80">Creative</span>
+            <Link to="/" className="flex items-center gap-3 mb-6">
+              <img src={tivaLogoWhite} alt="Tiva Creative" className="h-10 w-auto" />
+              <div className="flex flex-col">
+                <span className="font-display text-xl font-bold">tiva</span>
+                <span className="font-display text-xl font-light opacity-80">creative</span>
+              </div>
             </Link>
             <p className="font-body text-sm opacity-80 leading-relaxed mb-6">
               Digital consulting and business transformation for ambitious African businesses.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="p-2 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 transition-colors">
+              <a href="#" className="p-2 rounded-full bg-background/10 hover:bg-background/20 transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="#" className="p-2 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 transition-colors">
+              <a href="#" className="p-2 rounded-full bg-background/10 hover:bg-background/20 transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="p-2 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 transition-colors">
+              <a href="#" className="p-2 rounded-full bg-background/10 hover:bg-background/20 transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
@@ -96,7 +100,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-primary-foreground/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-background/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="font-body text-sm opacity-60">
             © {new Date().getFullYear()} Tiva Creative. All rights reserved.
           </p>

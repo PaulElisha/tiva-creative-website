@@ -83,7 +83,7 @@ export function CorePillars() {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mt-16 text-center"
         >
-          <Button variant="teal" size="lg" asChild>
+          <Button variant="default" size="lg" asChild>
             <Link to="/services">
               Explore Our Services
               <ArrowRight className="ml-2 h-5 w-5" />

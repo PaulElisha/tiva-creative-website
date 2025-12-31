@@ -38,7 +38,7 @@ export function ClosingCTA() {
                 Book a Strategy Session
               </Link>
             </Button>
-            <Button variant="teal" size="xl" asChild>
+            <Button variant="outline" size="xl" asChild>
               <Link to="/services">
                 Explore Our Services
                 <ArrowRight className="ml-2 h-5 w-5" />

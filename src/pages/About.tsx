@@ -267,7 +267,7 @@ const About = () => {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button variant="teal" size="xl" asChild>
+              <Button variant="outline" size="xl" asChild>
                 <Link to="/services">
                   View Our Services
                 </Link>
