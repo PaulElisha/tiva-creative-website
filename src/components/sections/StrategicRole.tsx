@@ -58,10 +58,11 @@ export function StrategicRole() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group p-8 rounded-2xl bg-card border border-border shadow-soft hover:shadow-medium transition-all duration-300 hover:-translate-y-1"
+              whileHover={{ y: -8, transition: { duration: 0.3 } }}
+              className="group p-8 rounded-2xl bg-card border border-border shadow-soft hover:shadow-accent hover:border-primary/30 transition-all duration-300"
             >
-              <div className="p-4 rounded-xl bg-primary/10 w-fit mb-6 group-hover:bg-primary/20 transition-colors duration-300">
-                <role.icon className="h-8 w-8 text-primary" />
+              <div className="p-4 rounded-xl bg-primary/10 w-fit mb-6 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                <role.icon className="h-8 w-8 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
               </div>
               <h3 className="font-display text-xl font-semibold text-foreground mb-3">
                 {role.title}

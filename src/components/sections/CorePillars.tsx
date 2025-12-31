@@ -54,19 +54,20 @@ export function CorePillars() {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: index * 0.15 }}
-              className="group relative"
+              whileHover={{ y: -10, transition: { duration: 0.3 } }}
+              className="group relative cursor-pointer"
             >
-              <div className="absolute inset-0 bg-primary/5 rounded-3xl transform group-hover:scale-105 transition-transform duration-500" />
+              <div className="absolute inset-0 bg-primary/5 rounded-3xl transform group-hover:scale-105 group-hover:bg-primary/10 transition-all duration-500" />
               <div className="relative p-8 lg:p-10">
                 <div className="flex items-center gap-4 mb-6">
-                  <span className="font-display text-5xl font-bold text-accent/30">
+                  <span className="font-display text-5xl font-bold text-accent/30 group-hover:text-primary/50 transition-colors duration-300">
                     {pillar.number}
                   </span>
-                  <div className="p-3 rounded-xl bg-primary">
+                  <div className="p-3 rounded-xl bg-primary group-hover:scale-110 group-hover:shadow-accent transition-all duration-300">
                     <pillar.icon className="h-6 w-6 text-primary-foreground" />
                   </div>
                 </div>
-                <h3 className="font-display text-2xl font-bold text-foreground mb-4">
+                <h3 className="font-display text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
                   {pillar.title}
                 </h3>
                 <p className="font-body text-muted-foreground leading-relaxed">
