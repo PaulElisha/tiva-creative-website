@@ -64,9 +64,10 @@ export function WhatWeDo() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                className="flex items-start gap-4 p-6 rounded-xl bg-card border border-border shadow-soft hover:shadow-medium transition-shadow duration-300"
+                whileHover={{ x: 8, transition: { duration: 0.2 } }}
+                className="flex items-start gap-4 p-6 rounded-xl bg-card border border-border shadow-soft hover:shadow-accent hover:border-primary/30 transition-all duration-300 cursor-pointer"
               >
-                <div className="p-3 rounded-lg bg-primary/10">
+                <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary transition-colors duration-300">
                   <item.icon className="h-6 w-6 text-primary" />
                 </div>
                 <p className="font-body text-foreground font-medium leading-relaxed">

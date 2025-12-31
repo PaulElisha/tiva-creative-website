@@ -9,14 +9,14 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-soft hover:shadow-medium",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-soft hover:shadow-medium btn-shine",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline: "border border-foreground bg-transparent hover:bg-foreground hover:text-background",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         // Custom variants for Tiva Creative
-        hero: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-accent hover:scale-[1.02] font-semibold",
+        hero: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-accent hover:scale-[1.02] btn-shine font-semibold",
         heroOutline: "border-2 border-primary-foreground/50 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:border-primary-foreground",
       },
       size: {
