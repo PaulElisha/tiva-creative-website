@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import tivaLogo from "@/assets/tiva-logo-full.png";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -18,11 +19,14 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
-      <nav className="container mx-auto flex items-center justify-between py-4 px-4 lg:px-8">
+      <nav className="container mx-auto flex items-center justify-between py-3 px-4 lg:px-8">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2">
-          <span className="font-display text-2xl font-bold text-primary">Tiva</span>
-          <span className="font-display text-2xl font-light text-foreground">Creative</span>
+        <Link to="/" className="flex items-center">
+          <img 
+            src={tivaLogo} 
+            alt="Tiva Creative" 
+            className="h-10 md:h-12 w-auto"
+          />
         </Link>
 
         {/* Desktop Navigation */}
@@ -45,7 +49,7 @@ export function Header() {
 
         {/* CTA Button */}
         <div className="hidden lg:block">
-          <Button variant="teal" size="lg" asChild>
+          <Button variant="default" size="lg" asChild>
             <Link to="/contact">Book a Strategy Session</Link>
           </Button>
         </div>
@@ -85,7 +89,7 @@ export function Header() {
                   {item.name}
                 </Link>
               ))}
-              <Button variant="teal" size="lg" className="w-full mt-4" asChild>
+              <Button variant="default" size="lg" className="w-full mt-4" asChild>
                 <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
                   Book a Strategy Session
                 </Link>
