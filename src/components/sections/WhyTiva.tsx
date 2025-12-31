@@ -46,12 +46,12 @@ export function WhyTiva() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <span className="font-body text-sm font-semibold text-accent uppercase tracking-wider mb-4 block">
+            <span className="font-body text-sm font-semibold text-background/70 uppercase tracking-wider mb-4 block">
               Why Tiva Creative
             </span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
               Built for African Realities.{" "}
-              <span className="text-accent">Designed for Global Standards.</span>
+              <span className="text-background/80">Designed for Global Standards.</span>
             </h2>
             <p className="font-body text-lg opacity-80 leading-relaxed mb-8">
               What sets us apart is not just what we do, but how we do it. We build solutions that are realistic, scalable, and sustainable.
@@ -71,10 +71,10 @@ export function WhyTiva() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                className="flex items-center gap-4 p-4 rounded-xl bg-primary-foreground/10 backdrop-blur-sm"
+                className="flex items-center gap-4 p-4 rounded-xl bg-background/10 backdrop-blur-sm hover:bg-background/20 transition-all duration-300"
               >
-                <CheckCircle className="h-6 w-6 text-accent flex-shrink-0" />
-                <p className="font-body text-base font-medium">
+                <CheckCircle className="h-6 w-6 text-background flex-shrink-0" />
+                <p className="font-body text-base font-medium text-background">
                   {item.title}
                 </p>
               </motion.div>

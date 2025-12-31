@@ -32,9 +32,9 @@ export function WhatWeDo() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Text */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, type: "spring", stiffness: 80 }}
           >
             <span className="font-body text-sm font-semibold text-accent uppercase tracking-wider mb-4 block">
               What We Actually Do
@@ -53,9 +53,9 @@ export function WhatWeDo() {
 
           {/* Right Column - Capabilities */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.2, type: "spring", stiffness: 80 }}
             className="space-y-6"
           >
             {capabilities.map((item, index) => (
