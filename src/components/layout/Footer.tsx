@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Linkedin, Twitter, Instagram } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Twitter, Instagram, Facebook } from "lucide-react";
 import tivaLogoWhite from "@/assets/tiva-icon-white.png";
 
 const footerLinks = {
@@ -14,6 +14,13 @@ const footerLinks = {
     { name: "Transformation Advisory", href: "/services#transformation" },
   ],
 };
+
+const socialLinks = [
+  { name: "LinkedIn", href: "https://www.linkedin.com/company/tivacreative", icon: Linkedin },
+  { name: "Twitter", href: "https://twitter.com/tivacreative", icon: Twitter },
+  { name: "Facebook", href: "https://facebook.com/tivacreative1", icon: Facebook },
+  { name: "Instagram", href: "https://instagram.com/tivacreative", icon: Instagram },
+];
 
 export function Footer() {
   return (
@@ -32,16 +39,19 @@ export function Footer() {
             <p className="font-body text-sm opacity-80 leading-relaxed mb-6">
               Digital consulting and business transformation for ambitious African businesses.
             </p>
-            <div className="flex gap-4">
-              <a href="#" className="p-2 rounded-full bg-background/10 hover:bg-background/20 transition-colors">
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a href="#" className="p-2 rounded-full bg-background/10 hover:bg-background/20 transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="p-2 rounded-full bg-background/10 hover:bg-background/20 transition-colors">
-                <Instagram className="h-5 w-5" />
-              </a>
+            <div className="flex gap-3">
+              {socialLinks.map((social) => (
+                <a 
+                  key={social.name}
+                  href={social.href} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label={social.name}
+                  className="p-2 rounded-full bg-background/10 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                >
+                  <social.icon className="h-5 w-5" />
+                </a>
+              ))}
             </div>
           </div>
 
