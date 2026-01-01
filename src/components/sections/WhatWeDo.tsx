@@ -22,19 +22,44 @@ const capabilities = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 40, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      type: "spring" as const,
+      stiffness: 100,
+      damping: 15,
+    },
+  },
+};
+
 export function WhatWeDo() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-24 lg:py-32 bg-background">
+    <section ref={ref} className="py-24 lg:py-32 bg-background overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Text */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -60 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
             <span className="font-body text-sm font-semibold text-accent uppercase tracking-wider mb-4 block">
               What We Actually Do
@@ -53,18 +78,16 @@ export function WhatWeDo() {
 
           {/* Right Column - Capabilities */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
             className="space-y-6"
           >
             {capabilities.map((item, index) => (
               <motion.div
                 key={item.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                whileHover={{ x: 8, transition: { duration: 0.2 } }}
+                variants={itemVariants}
+                whileHover={{ x: 12, scale: 1.02, transition: { duration: 0.2 } }}
                 className="flex items-start gap-4 p-6 rounded-xl bg-card border border-border shadow-soft hover:shadow-accent hover:border-primary/30 transition-all duration-300 cursor-pointer"
               >
                 <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary transition-colors duration-300">
@@ -80,9 +103,9 @@ export function WhatWeDo() {
 
         {/* Bottom Statement */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="mt-16 text-center"
         >
           <p className="font-display text-xl md:text-2xl text-foreground max-w-3xl mx-auto">
