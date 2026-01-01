@@ -133,19 +133,19 @@ const About = () => {
             >
               <div className="space-y-8">
                 <div>
-                  <h3 className="font-display text-xl font-semibold mb-3 text-accent">Our Mission</h3>
+                  <h3 className="font-display text-xl font-semibold mb-3 text-foreground">Our Mission</h3>
                   <p className="font-body opacity-90 leading-relaxed">
                     To design and deliver digital strategies, systems, and solutions that optimise operations, empower teams, and drive sustainable business growth.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-display text-xl font-semibold mb-3 text-accent">Our Vision</h3>
+                  <h3 className="font-display text-xl font-semibold mb-3 text-foreground">Our Vision</h3>
                   <p className="font-body opacity-90 leading-relaxed">
                     To become a trusted digital consulting partner shaping how African businesses build, scale, and compete globally.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-display text-xl font-semibold mb-3 text-accent">Our Belief</h3>
+                  <h3 className="font-display text-xl font-semibold mb-3 text-foreground">Our Belief</h3>
                   <p className="font-body opacity-90 leading-relaxed">
                     We believe every business - regardless of size - deserves access to smart, practical, and reliable digital solutions that enable growth.
                   </p>
