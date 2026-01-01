@@ -65,19 +65,14 @@ export function SocialProof() {
           {metrics.map((metric, index) => (
             <motion.div
               key={metric.label}
-              initial={{ opacity: 0, y: 50, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.1, type: "spring", stiffness: 100 }}
-              whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              className="text-center p-8 rounded-2xl bg-card border border-border shadow-soft hover:shadow-accent hover:border-primary/30 transition-all duration-300"
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="text-center p-8 rounded-2xl bg-card border border-border shadow-soft"
             >
-              <motion.div 
-                className="p-4 rounded-xl bg-primary/10 w-fit mx-auto mb-4"
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <metric.icon className="h-8 w-8 text-primary" />
-              </motion.div>
+              <div className="p-4 rounded-xl bg-accent/10 w-fit mx-auto mb-4">
+                <metric.icon className="h-8 w-8 text-accent" />
+              </div>
               <div className="font-display text-4xl font-bold text-primary mb-2">
                 {metric.value}
               </div>
@@ -93,11 +88,10 @@ export function SocialProof() {
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.author}
-              initial={{ opacity: 0, x: index === 0 ? -50 : 50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.7, delay: 0.4 + index * 0.15, type: "spring", stiffness: 80 }}
-              whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
-              className="p-8 lg:p-10 rounded-2xl bg-card border border-border shadow-soft hover:shadow-accent hover:border-primary/30 transition-all duration-300"
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, delay: 0.4 + index * 0.15 }}
+              className="p-8 lg:p-10 rounded-2xl bg-card border border-border shadow-soft"
             >
               <blockquote className="font-body text-lg text-foreground leading-relaxed mb-6">
                 "{testimonial.quote}"
