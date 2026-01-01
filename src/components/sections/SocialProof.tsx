@@ -39,17 +39,46 @@ const testimonials = [
   },
 ];
 
+const metricVariants = {
+  hidden: { opacity: 0, y: 50, scale: 0.9 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      type: "spring" as const,
+      stiffness: 100,
+      damping: 15,
+      delay: i * 0.1,
+    },
+  }),
+};
+
+const testimonialVariants = {
+  hidden: { opacity: 0, x: -40 },
+  visible: (i: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: "spring" as const,
+      stiffness: 80,
+      damping: 15,
+      delay: 0.5 + i * 0.2,
+    },
+  }),
+};
+
 export function SocialProof() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-24 lg:py-32 bg-secondary/30">
+    <section ref={ref} className="py-24 lg:py-32 bg-secondary/30 overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="font-body text-sm font-semibold text-accent uppercase tracking-wider mb-4 block">
@@ -65,10 +94,16 @@ export function SocialProof() {
           {metrics.map((metric, index) => (
             <motion.div
               key={metric.label}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="text-center p-8 rounded-2xl bg-card border border-border shadow-soft"
+              custom={index}
+              variants={metricVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              whileHover={{ 
+                y: -8, 
+                scale: 1.03,
+                transition: { duration: 0.2 } 
+              }}
+              className="text-center p-8 rounded-2xl bg-card border border-border shadow-soft hover:shadow-accent hover:border-primary/30 transition-all duration-300"
             >
               <div className="p-4 rounded-xl bg-accent/10 w-fit mx-auto mb-4">
                 <metric.icon className="h-8 w-8 text-accent" />
@@ -88,10 +123,16 @@ export function SocialProof() {
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.author}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, delay: 0.4 + index * 0.15 }}
-              className="p-8 lg:p-10 rounded-2xl bg-card border border-border shadow-soft"
+              custom={index}
+              variants={testimonialVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              whileHover={{ 
+                scale: 1.02,
+                boxShadow: "0 20px 40px -15px rgba(201, 13, 13, 0.15)",
+                transition: { duration: 0.3 } 
+              }}
+              className="p-8 lg:p-10 rounded-2xl bg-card border border-border shadow-soft transition-all duration-300"
             >
               <blockquote className="font-body text-lg text-foreground leading-relaxed mb-6">
                 "{testimonial.quote}"

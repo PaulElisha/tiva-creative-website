@@ -2,17 +2,30 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroPattern from "@/assets/hero-pattern.jpg";
+import { ParticlesBackground } from "@/components/ParticlesBackground";
 
 export function Hero() {
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-      {/* Background Image */}
+      {/* Corporate Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-foreground via-foreground/95 to-primary/20" />
+      
+      {/* Grid Pattern Overlay */}
       <div 
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroPattern})` }}
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: `linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px),
+                           linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)`,
+          backgroundSize: '60px 60px'
+        }}
       />
-      <div className="absolute inset-0 bg-primary/85" />
+      
+      {/* Particles Animation */}
+      <ParticlesBackground />
+      
+      {/* Accent Glow */}
+      <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[150px]" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[120px]" />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="max-w-4xl">
@@ -23,7 +36,7 @@ export function Hero() {
           >
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground leading-tight mb-6">
               We Help African Businesses{" "}
-              <span className="text-gradient-red">Design, Build, and Scale</span>{" "}
+              <span className="text-primary">Design, Build, and Scale</span>{" "}
               Digital-First Operations.
             </h1>
           </motion.div>
