@@ -55,10 +55,10 @@ export function CorePillars() {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="font-body text-sm font-semibold text-accent uppercase tracking-wider mb-4 block">
-            Our Core Pillars
+            Our Services
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
-            Three Pillars of Digital Excellence
+            Strategic Programs for Every Growth Stage
           </h2>
         </motion.div>
 
