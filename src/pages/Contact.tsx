@@ -19,7 +19,7 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Call Us",
-    value: "+234 XXX XXX XXXX",
+    value: "+2348037089600",
     description: "Mon-Fri, 9am-6pm WAT",
   },
   {
