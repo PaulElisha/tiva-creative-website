@@ -72,9 +72,9 @@ export function Hero() {
               </Link>
             </Button>
             <Button variant="heroOutline" size="xl" asChild>
-              <a href="https://digital-business-audit.vercel.app" target="_blank" rel="noopener noreferrer">
+              <Link to="/audit">
                 Request a Digital Audit
-              </a>
+              </Link>
             </Button>
           </motion.div>
         </div>
