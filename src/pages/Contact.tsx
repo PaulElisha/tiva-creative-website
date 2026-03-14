@@ -152,7 +152,7 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <a href="https://digital-business-audit.vercel.app" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 p-6 rounded-xl bg-card border border-border shadow-soft hover:shadow-medium transition-shadow duration-300">
+                <Link to="/audit" className="flex items-start gap-4 p-6 rounded-xl bg-card border border-border shadow-soft hover:shadow-medium transition-shadow duration-300">
                   <div className="p-3 rounded-lg bg-primary/10">
                     <MessageSquare className="h-6 w-6 text-primary" />
                   </div>
@@ -164,7 +164,7 @@ const Contact = () => {
                       Request a comprehensive assessment of your current digital maturity and opportunities.
                     </p>
                   </div>
-                </a>
+                </Link>
               </div>
             </motion.div>
 
